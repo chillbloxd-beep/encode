@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blackpine Personal Vault — browser-side zero-knowledge file encryption with ciphertext-only server storage.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Command Prompt - Blackpine Personal Vault</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/src/client/styles.css">
+</head>
+<body>
+  <main class="cmd-window" aria-label="Blackpine Personal Vault command prompt">
+    <div class="cmd-titlebar" aria-hidden="true">C:\WINDOWS\system32\cmd.exe - BLACKPINE PERSONAL VAULT</div>
+    <section id="terminal" class="terminal" aria-live="polite" aria-label="Terminal output"></section>
+    <form id="command-form" class="command-line" autocomplete="off">
+      <label id="prompt-label" for="command-input">C:\BLACKPINE\VAULT&gt;</label>
+      <input id="command-input" name="command" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="input-help">
+      <span id="cursor" aria-hidden="true">_</span>
+    </form>
+    <p id="input-help" class="sr-only">Type help to list commands. Sensitive answers are hidden and are never printed.</p>
+    <input id="file-picker" type="file" hidden>
+  </main>
+  <noscript>This vault requires JavaScript because encryption and decryption run locally in your browser.</noscript>
+  <script type="module" src="/src/client/app.js"></script>
+</body>
+</html>

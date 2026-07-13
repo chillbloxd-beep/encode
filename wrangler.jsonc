@@ -1,0 +1,46 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "blackpine-personal-vault",
+  "main": "src/server.js",
+  "compatibility_date": "2026-07-12",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "VAULT_DB",
+      "database_name": "blackpine-personal-vault",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "VAULT_BUCKET",
+      "bucket_name": "blackpine-personal-vault"
+    }
+  ],
+  "secrets": {
+    "required": [
+      "VAULT_API_TOKEN"
+    ]
+  },
+  "observability": {
+    "enabled": false
+  },
+  "triggers": {
+    "crons": [
+      "17 * * * *"
+    ]
+  },
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "vault.blackpinecybersecurity.com",
+      "custom_domain": true
+    }
+  ]
+}

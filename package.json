@@ -1,0 +1,29 @@
+{
+  "name": "blackpine-personal-vault",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/release-manifest.mjs",
+    "check": "npm run lint:syntax && npm run test && npm run test:integration && npm run audit:site",
+    "lint:syntax": "node --check src/server.js && node --check src/client/app.js && node --check src/client/crypto-core.js && node --check src/client/crypto-worker.js",
+    "test": "node --test tests/*.test.js",
+    "audit:site": "npm run build && node scripts/security-audit.mjs",
+    "deploy": "npm run check && wrangler deploy",
+    "db:init:local": "wrangler d1 execute VAULT_DB --local --file=./schema.sql",
+    "db:init:remote": "wrangler d1 execute VAULT_DB --remote --file=./schema.sql",
+    "deploy:dry": "npm run build && wrangler deploy --dry-run",
+    "test:integration": "node tests/integration-worker.mjs"
+  },
+  "dependencies": {
+    "libsodium-wrappers-sumo": "0.8.4"
+  },
+  "devDependencies": {
+    "vite": "8.1.4",
+    "wrangler": "4.110.0"
+  }
+}

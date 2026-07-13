@@ -1,0 +1,16 @@
+{
+  "reviewDate": "2026-07-12",
+  "unitTests": { "passed": 5, "failed": 0 },
+  "localWorkerD1R2Integration": "passed",
+  "wrongPassphraseRejection": "passed",
+  "tamperedPackageRejection": "passed",
+  "apiBoundaryTests": "passed",
+  "scheduledExpiredUploadCleanup": "passed-manual-local-test",
+  "automatedSourceBuildAssertions": { "passed": 26, "failed": 0 },
+  "wranglerDryRun": "passed",
+  "dependencyAuditProduction": { "vulnerabilities": 0 },
+  "dependencyAuditAllHighSeverity": { "vulnerabilities": 0 },
+  "cleanNpmCiFromPublicRegistry": "passed",
+  "realBrowserAutomatedE2E": "not-run-managed-browser-policy-blocked-navigation",
+  "independentProfessionalAudit": false
+}
